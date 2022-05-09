@@ -1,0 +1,54 @@
+
+{'type': 'PUSH_ARTIFACT', 'occur_at': 1652074321, 'operator': 'admin', 'event_data': {'resources': [{'digest': 'sha256:61face6bf030edce7ef6d7dd66fe452298d6f5f7ce032afdd01683ef02b2b841', 'tag': '20220509_v001', 'resource_url': 'okd45-reg.okd.local/test/nginx:20220509_v001'}], 'repository': {'date_created': 1652074321, 'name': 'nginx', 'namespace': 'test', 'repo_full_name': 'test/nginx', 'repo_type': 'public'}}}
+INFO:     192.168.1.111:38272 - "POST /test HTTP/1.1" 200 OK
+
+push
+抓取項目
+做什麼動作	type
+誰做的		operator
+目標url		event_data . resources . resource_url
+目標sha		event_data . resources . digest
+目標tag		event_data . resources . tag
+目標project	repository . namespace
+目標名稱		repository . name
+
+
+
+{'type': 'PULL_ARTIFACT', 'occur_at': 1652074330, 'operator': 'robot$test+Trivy-5a1b5d72-cf59-11ec-a5f9-0242ac120009', 'event_data': {'resources': [{'digest': 'sha256:61face6bf030edce7ef6d7dd66fe452298d6f5f7ce032afdd01683ef02b2b841', 'tag': 'sha256:61face6bf030edce7ef6d7dd66fe452298d6f5f7ce032afdd01683ef02b2b841', 'resource_url': 'okd45-reg.okd.local/test/nginx@sha256:61face6bf030edce7ef6d7dd66fe452298d6f5f7ce032afdd01683ef02b2b841'}], 'repository': {'date_created': 1652074321, 'name': 'nginx', 'namespace': 'test', 'repo_full_name': 'test/nginx', 'repo_type': 'public'}}}
+INFO:     192.168.1.111:38314 - "POST /test HTTP/1.1" 200 OK
+
+
+pull
+抓取項目
+做什麼動作	type
+誰做的		operator
+目標url		event_data . resources . resource_url
+目標sha		event_data . resources . digest
+目標tag		event_data . resources . tag
+目標project	repository . namespace
+目標名稱		repository . name
+
+
+
+{'type': 'SCANNING_COMPLETED', 'occur_at': 1652074333, 'operator': 'auto', 'event_data': {'resources': [{'digest': 'sha256:61face6bf030edce7ef6d7dd66fe452298d6f5f7ce032afdd01683ef02b2b841', 'tag': '20220509_v001', 'resource_url': 'okd45-reg.okd.local/test/nginx:20220509_v001', 'scan_overview': {'application/vnd.security.vulnerability.report; version=1.1': {'report_id': '75f202c4-bf1e-4eb8-9c79-d3e5d3aa3a47', 'scan_status': 'Success', 'severity': 'Critical', 'duration': 12, 'summary': {'total': 136, 'fixable': 2, 'summary': {'Critical': 3, 'High': 21, 'Low': 92, 'Medium': 20}}, 'start_time': '2022-05-09T05:32:01Z', 'end_time': '2022-05-09T05:32:13Z', 'scanner': {'name': 'Trivy', 'vendor': 'Aqua Security', 'version': 'v0.20.1'}, 'complete_percent': 100}}}], 'repository': {'name': 'nginx', 'namespace': 'test', 'repo_full_name': 'test/nginx', 'repo_type': 'public'}}}
+INFO:     192.168.1.111:38320 - "POST /test HTTP/1.1" 200 OK
+
+
+scan
+抓取項目
+做什麼動作	type
+誰做的		operator
+目標url		event_data . resources . resource_url
+目標sha		event_data . resources . digest
+目標tag		event_data . resources . tag
+掃描結果
+event_data . resources . scan_overview . application/vnd.security.vulnerability.report; version=1.1 . scan_status
+event_data . resources . scan_overview . application/vnd.security.vulnerability.report; version=1.1 . severity
+event_data . resources . scan_overview . application/vnd.security.vulnerability.report; version=1.1 . summary . total
+event_data . resources . scan_overview . application/vnd.security.vulnerability.report; version=1.1 . summary . fixable
+event_data . resources . scan_overview . application/vnd.security.vulnerability.report; version=1.1 . summary . summary . Critical
+event_data . resources . scan_overview . application/vnd.security.vulnerability.report; version=1.1 . summary . summary . High
+event_data . resources . scan_overview . application/vnd.security.vulnerability.report; version=1.1 . summary . summary . Medium
+event_data . resources . scan_overview . application/vnd.security.vulnerability.report; version=1.1 . summary . summary . Low
+目標project	repository . namespace
+目標名稱		repository . name
